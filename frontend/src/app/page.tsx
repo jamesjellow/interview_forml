@@ -17,15 +17,18 @@ export default function Home() {
 
 	const fetchSomeData = async () => {
 		try {
-			const data = await fetch('http://localhost:3000/api/', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify({
-					actual_combination: searchQuery,
-				}),
-			});
+			const data = await fetch(
+				'https://jamesjellow.pythonanywhere.com/api/crack_safe',
+				{
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({
+						actual_combination: searchQuery,
+					}),
+				}
+			);
 
 			return await data.json();
 		} catch (err) {
