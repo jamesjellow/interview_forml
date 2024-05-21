@@ -18,7 +18,7 @@ def crack_safe(actual_combination: str):
     attempts = 0
     
     for i in range(len(actual_combination)):
-        number_correct_so_far = -1
+        number_correct_so_far = 0
         best = '0'
         
         for digit in range(10):
@@ -31,6 +31,7 @@ def crack_safe(actual_combination: str):
             if correct_digits > number_correct_so_far:
                 number_correct_so_far = correct_digits
                 best = digit
+                break
         
         starting_guess[i] = best
     
