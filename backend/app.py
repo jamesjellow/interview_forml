@@ -14,14 +14,14 @@ def countCorrectDigits(guess: List[str], actual_combination: str) -> int:
 def crack_safe(actual_combination: str):
     start = time.time()
     
-    starting_guess = ['0'] * len(actual_combination)
+    starting_guess = ['-1'] * len(actual_combination)
     attempts = 0
     
     for i in range(len(actual_combination)):
         number_correct_so_far = 0
         best = '0'
         
-        for digit in range(10):
+        for digit in range(0,10):
             starting_guess[i] = str(digit)
 
             attempts += 1
