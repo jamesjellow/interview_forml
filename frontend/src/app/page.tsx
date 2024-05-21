@@ -85,7 +85,7 @@ export default function Home() {
 								Time taken
 							</Typography>
 							<Typography color={'secondary'} variant="h4">
-								{timeTaken} seconds
+								{`${(parseFloat(timeTaken) * 1000).toFixed(2)}`} ms
 							</Typography>
 						</Stack>
 						<Stack
