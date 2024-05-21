@@ -3,6 +3,7 @@ certifi==2024.2.2
 charset-normalizer==3.3.2
 click==8.1.7
 Flask==3.0.3
+Flask-Cors==4.0.1
 gunicorn==22.0.0
 idna==3.7
 itsdangerous==2.2.0
@@ -12,3 +13,4 @@ packaging==24.0
 requests==2.32.1
 urllib3==2.2.1
 Werkzeug==3.0.3
+wheel @ file:///opt/homebrew/Cellar/python%403.12/3.12.2_1/libexec/wheel-0.42.0-py3-none-any.whl#sha256=5f1ca525bef7466225922019d72cb06a9e91cd3ff807ddd4be1acb84655e5107

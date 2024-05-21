@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
-import logging
 import time
 from typing import List
+from flask_cors import CORS
 
 def countCorrectDigits(guess: List[str], actual_combination: str) -> int:
     countOfCorrectDigits = 0
@@ -40,12 +40,7 @@ def crack_safe(actual_combination: str):
 
 
 app = Flask(__name__, )
-
-logging.basicConfig(level=logging.DEBUG, # Set the logging level
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', # Define the format for the log messages
-                    datefmt='%Y-%m-%d %H:%M:%S')
-logger = logging.getLogger(__name__)
-
+CORS(app)
 
 @app.route('/')
 def hello_world():
@@ -58,8 +53,6 @@ def crack_code():
 
         data = request.get_json()
         actual_combination = data['actual_combination']
-
-        logger.debug(actual_combination)
 
         attempts, time = crack_safe(str(actual_combination))
 
